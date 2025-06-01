@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rewards - Coffee'ss</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="rewards.css" />
+  <style>
+    .sidebar {
+      position: fixed;
+      top: 0;
+      right: -350px;
+      width: 350px;
+      height: 100%;
+      background-color: #f7f7f7;
+      box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+      padding: 30px 20px;
+      transition: right 0.3s ease;
+      z-index: 1000;
+    }
+
+    .sidebar.open {
+      right: 0;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 20px;
+    }
+
+    .sidebar label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    .sidebar input {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .btn-submit,
+    .btn-confirm {
+      margin-top: 20px;
+      width: 100%;
+      padding: 12px;
+      background-color: #5f4129;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn-submit:hover,
+    .btn-confirm:hover {
+      background-color: #4a321f;
+    }
+
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: #333;
+    }
+
+    .account-info {
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .account-info.hidden {
+      display: none;
+    }
+
+    .account-info h2 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    /* Reward popup toast */
+    .reward-popup {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background-color: #fff6ec;
+      color: #4a321f;
+      padding: 16px 24px;
+      border-radius: 14px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+      z-index: 1100;
+      font-size: 18px;
+      font-weight: 700;
+      display: none;
+      align-items: center;
+      gap: 12px;
+      animation: slideInLeft 0.4s ease-out forwards;
+    }
+
+    @keyframes slideInLeft {
+      0% {
+        opacity: 0;
+        transform: translateX(-40px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Coffee'ss</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">MENU</a></li>
+        <li><a href="rewards.html" class="active">REWARDS</a></li>
+        <li><a href="about.html">ABOUT US</a></li>
+        <li><a href="#">CONTACT US</a></li>
+      </ul>
+    </nav>
+  </header>
+
+<!-- Rewards Hero Section -->
+<section class="rewards-hero">
+    <div class="container">
+      <h1>Free Coffee is a Tap Away</h1>
+      <p>Join now to start collecting Stars and earning Rewards.</p>
+    </div>
+  </section>
+
+  <!-- Rewards Details Section -->
+  <section class="rewards-details">
+    <h2>Unlock Rewards Fast</h2>
+    <div class="rewards-steps">
+      <div class="step">
+        <img src="images/star1.jpg" alt="Step 1" />
+        <h3>Join</h3>
+        <p>Sign up for free, quickly and easily.</p>
+      </div>
+      <div class="step">
+        <img src="images/star2.jpg" alt="Step 2" />
+        <h3>Earn Stars</h3>
+        <p>Order coffee and collect Stars with every purchase.</p>
+      </div>
+      <div class="step">
+        <img src="images/star3.jpg" alt="Step 3" />
+        <h3>Get Rewards</h3>
+        <p>Redeem Stars for free drinks, food, and more.</p>
+      </div>
+    </div>
+  </section>
+
+<!-- Rewards Cards Section -->
+<section class="rewards-cards-section">
+    <h2>More Ways to Earn</h2>
+    <div class="rewards-cards">
+      <div class="reward-card">
+        <h3>Join for Free</h3>
+        <p>Sign up and get 50 welcome points instantly.</p>
+      </div>
+      <div class="reward-card">
+        <h3>Earn with Every Order</h3>
+        <p>Get 1 point for every $1 spent – in-store or online.</p>
+      </div>
+      <div class="reward-card">
+        <h3>Redeem Delicious Rewards</h3>
+        <p>Use your points for free drinks, exclusive items, and special offers.</p>
+      </div>
+    </div>
+    <a href="#" class="join-btn">Join Now</a>
+  </section>
+
+  <!-- Sidebar Registration Form -->
+  <div id="sidebar" class="sidebar">
+    <button class="close-btn" id="closeSidebar">&times;</button>
+    <h2>Create Your Account</h2>
+    <form id="registerForm">
+      <label for="regName">Name</label>
+      <input type="text" id="regName" name="regName" required />
+
+      <label for="regEmail">Email</label>
+      <input type="email" id="regEmail" name="regEmail" required />
+
+      <label for="regPassword">Password</label>
+      <input type="password" id="regPassword" name="regPassword" required />
+
+      <button type="submit" class="btn-submit">Register</button>
+      <button type="button" class="btn-confirm" id="confirmBtn" style="display:none;">Confirm & View Rewards</button>
+    </form>
+  </div>
+
+  <!-- User Account Info -->
+  <div id="accountInfo" class="account-info hidden">
+    <h2>Welcome, <span id="accName"></span>!</h2>
+    <p>Email: <span id="accEmail"></span></p>
+    <p>You have <strong><span id="accPoints"> 50 Points 🌟</span></strong>.</p>
+  </div>
+
+  <!-- Reward Popup -->
+  <div class="reward-popup" id="rewardPopup">
+    🎉 You've earned <strong> 50 Points</strong>!
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Coffee'ss. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const joinButtons = document.querySelectorAll('.btn-join, .join-btn');
+    const sidebar = document.getElementById('sidebar');
+    const closeBtn = document.getElementById('closeSidebar');
+    const form = document.getElementById('registerForm');
+    const confirmBtn = document.getElementById('confirmBtn');
+    const accountInfo = document.getElementById('accountInfo');
+    const accName = document.getElementById('accName');
+    const accEmail = document.getElementById('accEmail');
+    const accPoints = document.getElementById('accPoints');
+
+    // Open sidebar
+    joinButtons.forEach(btn => {
+      btn.addEventListener('click', e => {
+        e.preventDefault();
+        sidebar.classList.add('open');
+      });
+    });
+
+    // Close sidebar
+    closeBtn.addEventListener('click', () => {
+      sidebar.classList.remove('open');
+    });
+
+    // Handle form submission
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      confirmBtn.style.display = 'block';
+      form.querySelector('.btn-submit').disabled = true;
+    });
+
+    // Handle confirm click
+    confirmBtn.addEventListener('click', () => {
+      const name = document.getElementById('regName').value.trim();
+      const email = document.getElementById('regEmail').value.trim();
+
+      accName.textContent = name;
+      accEmail.textContent = email;
+      accPoints.textContent = '50 Points 🌟';
+
+      sidebar.classList.remove('open');
+      accountInfo.classList.remove('hidden');
+
+      // Show popup
+      const popup = document.getElementById("rewardPopup");
+      popup.style.display = "flex";
+
+      // Auto-hide after 4 seconds
+      setTimeout(() => {
+        popup.style.opacity = "0";
+        popup.style.transform = "translateX(-50px)";
+        setTimeout(() => popup.remove(), 500);
+      }, 4000);
+    });
+  </script>
+
+</body>
+</html>

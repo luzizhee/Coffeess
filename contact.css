@@ -1,0 +1,169 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fffaf3;
+    color: #3e2723;
+    line-height: 1.6;
+    padding: 20px;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #5d4037;
+  }
+  
+  p {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  /* Contact Section */
+  #contact-us {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #fdf6ee;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Form */
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .form-group label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 6px;
+  }
+  
+  input,
+  select,
+  textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #d7ccc8;
+    border-radius: 10px;
+    font-size: 1rem;
+    background: #fff;
+    transition: border-color 0.3s;
+  }
+  
+  input:focus,
+  textarea:focus,
+  select:focus {
+    border-color: #a1887f;
+    outline: none;
+  }
+  
+  textarea {
+    resize: vertical;
+  }
+  
+  /* Required Field Asterisk */
+  .required {
+    color: red;
+  }
+  
+  /* Submit Button */
+  .contact-button {
+    background-color: #6d4c41;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .contact-button:hover {
+    background-color: #5d4037;
+  }
+  
+  /* Contact Info */
+  .contact-info {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .contact-info a {
+    color: #6d4c41;
+    text-decoration: none;
+  }
+  
+  .contact-info a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Map */
+  .map-container {
+    margin-top: 40px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Side Social Icons using Images */
+  .side-social-icons {
+    position: fixed;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: #fdf6ee;
+    padding: 10px 8px;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  
+  .side-social-icons a img {
+    width: 32px;
+    height: 32px;
+    transition: transform 0.3s;
+  }
+  
+  .side-social-icons a:hover img {
+    transform: scale(1.2);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    #contact-us {
+      padding: 20px;
+    }
+  
+    .side-social-icons {
+      top: auto;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      flex-direction: row;
+      padding: 8px 10px;
+      border-radius: 0;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
+      width: 100%;
+      justify-content: center;
+      gap: 15px;
+    }
+  
+    .side-social-icons a img {
+      width: 28px;
+      height: 28px;
+    }
+  }

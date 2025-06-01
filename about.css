@@ -1,0 +1,116 @@
+/* Hero About Section */
+.hero-about {
+    position: relative;
+    background: url('images/about-bg.jpg') center center / cover no-repeat;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(12, 12, 12, 0.4); /* Slight darker overlay */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 2rem;
+  }
+  
+  .hero-text {
+    color: rgb(255, 255, 255);
+    max-width: 1000px;
+  }
+  
+.hero-text h1,
+.hero-text p {
+    font-family: 'Dancing Script', cursive;
+}
+  
+  .hero-text h1 {
+    font-size: 3.5rem;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+  }
+  
+  .hero-text p {
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  
+  /* About Section - 50/50 Split Layout */
+  .about-split {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+  }
+  
+  .about-image {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .about-content {
+    width: 50%;
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #fff;
+  }
+  
+  .about-content h2 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    color: #6f4e37;
+    font-family: 'Georgia', serif;
+  }
+  
+  .about-content p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  
+  /* Responsive for smaller screens */
+  @media (max-width: 768px) {
+    .about-split {
+      flex-direction: column;
+      height: auto;
+    }
+  
+    .about-image,
+    .about-content {
+      width: 100%;
+      height: auto;
+    }
+  
+    .about-content {
+      padding: 2rem;
+      text-align: center;
+    }
+  
+    .about-content h2 {
+      font-size: 2rem;
+    }
+  
+    .about-content p {
+      font-size: 1rem;
+    }
+  }

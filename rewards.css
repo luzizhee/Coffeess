@@ -1,0 +1,333 @@
+.rewards-hero {
+    background: url('images/rewards-bg.jpg') no-repeat center center/cover;
+    padding: 100px 20px;
+    text-align: center;
+    border-bottom: 4px solid #5f4129;
+    position: relative;
+    color: white;
+  }
+  
+  .rewards-hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(47, 38, 31, 0.5); /* dark overlay for text readability */
+    z-index: 0;
+  }
+  
+  .rewards-hero .container {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .rewards-hero h1 {
+    font-size: 44px;
+    margin-bottom: 20px;
+    font-weight: 800;
+  }
+  
+  .rewards-hero p {
+    font-size: 20px;
+    margin: 14px 0;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .btn-join {
+    background-color: #5f4129;
+    color: #fff;
+    padding: 14px 36px;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: 700;
+    display: inline-block;
+    margin-top: 28px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn-join:hover,
+  .btn-join:focus {
+    background-color: #4a321f;
+    outline: none;
+    transform: scale(1.06);
+  }
+  
+  .download-text a {
+    color: #274268;
+    text-decoration: underline;
+  }
+  
+  /* ===== DETAILS SECTION ===== */
+  .rewards-details {
+    background: linear-gradient(to right, #4574a0, #5a8cc0);
+    padding: 80px 20px;
+    text-align: center;
+    color: #f9f9f9;
+  }
+  
+  .rewards-details h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    font-weight: 800;
+  }
+  
+  .rewards-steps {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+  
+  .step {
+    max-width: 240px;
+    text-align: center;
+    flex: 1 1 200px;
+  }
+  
+  .step img {
+    width: 90px;
+    margin-bottom: 20px;
+  }
+  
+  .step h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: #fff;
+  }
+  
+  .step p {
+    font-size: 16px;
+    color: #eee;
+  }
+  
+  /* ===== REWARDS CARDS SECTION ===== */
+  .rewards-cards-section {
+    position: relative;
+    background: url('images/rewards-cards-bg.jpg') no-repeat center center/cover;
+    padding: 80px 20px;
+    text-align: center;
+    color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+  
+  .rewards-cards-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(47, 38, 31, 0.6); /* dark overlay for contrast */
+    z-index: 0;
+  }
+  
+  .rewards-cards-section h2,
+  .rewards-cards-section .rewards-cards,
+  .rewards-cards-section .join-btn {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .rewards-cards-section h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    font-weight: 800;
+    color: #f9f9f9;
+  }
+  
+  .rewards-cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-bottom: 50px;
+  }
+  
+  .reward-card {
+    background-color: rgba(255, 255, 255, 0.85); /* slight white translucent bg */
+    border-radius: 20px;
+    padding: 32px 24px;
+    width: 300px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    color: #4a321f; /* text color adjusted for contrast */
+  }
+  
+  .reward-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  }
+  
+  .reward-card h3 {
+    font-size: 22px;
+    margin-bottom: 14px;
+    font-weight: 700;
+  }
+  
+  .reward-card p {
+    font-size: 16px;
+  }
+  
+  .join-btn {
+    background-color: #b4cbd8;
+    color: #13283f;
+    padding: 14px 32px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 700;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .join-btn:hover {
+    background-color: #9abed8;
+    transform: scale(1.06);
+  }
+  
+  /* ===== SIDEBAR & ACCOUNT ===== */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 350px;
+    height: 100%;
+    background-color: #f7f7f7;
+    box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+    padding: 30px 20px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    overflow-y: auto;
+    border-left: 4px solid #5f4129;
+  }
+  
+  .sidebar.open {
+    right: 0;
+  }
+  
+  .sidebar h2 {
+    margin-bottom: 20px;
+    color: #5f4129;
+    font-weight: 700;
+    font-size: 28px;
+    text-align: center;
+  }
+  
+  .sidebar label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .sidebar input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 8px;
+    border: 1.5px solid #ccc;
+    font-size: 16px;
+    background-color: #fffdfb;
+    transition: border-color 0.3s ease;
+  }
+  
+  .sidebar input:focus {
+    border-color: #5f4129;
+    outline: none;
+  }
+  
+  .btn-submit,
+  .btn-confirm {
+    margin-top: 25px;
+    width: 100%;
+    padding: 14px;
+    background-color: #5f4129;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-weight: 700;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-submit:hover,
+  .btn-confirm:hover {
+    background-color: #4a321f;
+  }
+  
+  .close-btn {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    background: none;
+    border: none;
+    font-size: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    color: #5f4129;
+    transition: color 0.3s ease;
+  }
+  
+  .close-btn:hover {
+    color: #4a321f;
+  }
+  
+  .account-info {
+    background-color: #b4cbd8;
+    padding: 45px 25px;
+    margin: 30px auto;
+    max-width: 520px;
+    border-radius: 18px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    color: #13283f;
+    font-weight: 600;
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+  
+  .account-info.show {
+    opacity: 1;
+    transform: scale(1);
+  }
+  
+  .account-info h2 {
+    font-size: 30px;
+    margin-bottom: 12px;
+  }
+  
+  .account-info p {
+    font-size: 20px;
+    margin: 6px 0;
+  }
+  
+  .account-info.hidden {
+    display: none;
+  }
+  
+  .reward-points {
+    font-weight: 900;
+    font-size: 36px;
+    color: #4a321f;
+    margin-top: 10px;
+    display: inline-block;
+  }
+  
+  @keyframes fadeScaleIn {
+    0% {
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  .account-info.animate {
+    animation: fadeScaleIn 0.5s ease forwards;
+  }

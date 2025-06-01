@@ -1,0 +1,121 @@
+<link rel="stylesheet" href="style.css" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Coffee'ss - Contact Us</title>
+
+  <!-- Google Fonts for friendly typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Main stylesheets -->
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="contact.css" />
+
+  <!-- FontAwesome CDN for social icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-papb5V2sLLbI9qip+gujHFMZ6s02vKU8S+6uFlhWCBM27mjwqrlIlUFn6f4zv2uXYWdjMJLv6wRrAjJ9Q9R3Ig=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+</head>
+<body>
+
+<!-- Side Social Icons using images -->
+<div class="side-social-icons" aria-label="Follow us on social media">
+    <a href="https://www.facebook.com/CoffeeristOfficial" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+      <img src="images/facebook.jpg" alt="Facebook icon">
+    </a>
+    <a href="https://instagram.com/yourpage" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+      <img src="images/instagram.jpg" alt="Instagram icon">
+    </a>
+    <a href="https://x.com/girlnoone136" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+      <img src="images/twitter.jpg" alt="Twitter icon">
+    </a>
+    <a href="https://www.tiktok.com/@roebs.cup" target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+      <img src="images/tiktok.jpg" alt="TikTok icon">
+    </a>
+  </div>
+  
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">Coffee'ss</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">MENU</a></li>
+        <li><a href="rewards.html">REWARDS</a></li>
+        <li><a href="about.html">ABOUT US</a></li>
+        <li><a href="contact.html" class="active">CONTACT US</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contact Section -->
+  <main>
+    <section id="contact-us">
+      <h2>Get in Touch</h2>
+      <p>We’d love to hear from you — whether it’s a question, feedback, or a special order! Fill out the form below or reach us through the following:</p>
+
+      <form action="#" method="POST" novalidate>
+        <div class="form-group">
+          <label for="name">Name <span class="required">*</span></label>
+          <input type="text" id="name" name="name" placeholder="Your name" required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email <span class="required">*</span></label>
+          <input type="email" id="email" name="email" placeholder="Your email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone (optional)</label>
+          <input type="tel" id="phone" name="phone" placeholder="Your phone number" />
+        </div>
+
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject">
+            <option value="general">General Inquiry</option>
+            <option value="order">Order Question</option>
+            <option value="feedback">Feedback</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Message <span class="required">*</span></label>
+          <textarea id="message" name="message" placeholder="Write your message here..." rows="5" required></textarea>
+        </div>
+
+        <button type="submit" class="contact-button">Send Message</button>
+      </form>
+
+      <!-- Contact Info -->
+      <div class="contact-info">
+        <h3>Our Location</h3>
+        <p>423 Coffee St, Pasig City, Metro Manila, Philippines</p>
+        <p>Phone: <a href="tel:+23145476241">(231) 45476241</a></p>
+        <p>Email: <a href="mailto:coffeess@gmail.com">coffeess@gmail.com</a></p>
+      </div>
+
+      <!-- Google Map -->
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434576624!2d-122.41941508468184!3d37.77492927975925!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085818aaee7a1e9%3A0x77798e35db1c8eaa!2s123%20Coffee%20St%2C%20San%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1685400000000!5m2!1sen!2sus"
+          width="100%"
+          height="280"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Coffee Shop Location"
+        ></iframe>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

@@ -1,0 +1,456 @@
+/* Reset and body */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fff;
+}
+
+/* Navbar */
+.navbar {
+    background-color: #233e6f;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.8rem;
+    font-family: 'Georgia', serif;
+    letter-spacing: 1px;
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar nav ul li a {
+    color: rgb(230, 222, 217);
+    text-decoration: none;
+}
+
+.navbar nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Hero */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 2rem;
+    background: url("images/background.jpg") center/cover no-repeat;
+    color: #34241f;
+    flex-wrap: wrap;
+}
+
+.hero-content {
+    max-width: 50%;
+    position: relative;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.order-button {
+    padding: 1rem 2rem;
+    background-color: #203764;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.order-button:hover {
+    background-color: #603b21;
+}
+
+.offer-badge {
+    background-color: #724831;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-weight: bold;
+}
+
+.hero-image img {
+    height: 400px;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+/* Menu Section */
+.menu-section {
+    padding: 4rem 2rem;
+    background-color: #96b1db;
+    text-align: center;
+}
+
+.menu-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: #193267;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+.menu-item {
+    background: #fff;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    max-width: 300px;
+}
+
+.menu-item:hover {
+    transform: translateY(-5px);
+}
+
+.menu-item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.menu-item h3 {
+    margin: 1rem 0 0.5rem;
+    color: #333;
+}
+
+.menu-item p {
+    color: #473727;
+    font-size: 0.9rem;
+}
+
+.menu-item button {
+    margin-top: 0.5rem;
+    padding: 0.6rem 1rem;
+    background-color: #1d3667;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.menu-item button:hover {
+    background-color: #113261;
+}
+
+/* Floating Cart Button */
+#cart-toggle {
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    background-color: #405e90;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 1.8rem;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    user-select: none;
+}
+
+#cart-count {
+    position: absolute;
+    top: 6px;
+    right: 6px;
+    background: #3a1145;
+    color: white;
+    font-size: 0.75rem;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+/* Cart Sidebar */
+#cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 350px;
+    height: 100vh;
+    background: white;
+    box-shadow: -4px 0 15px rgba(0,0,0,0.2);
+    padding: 2rem;
+    transition: right 0.3s ease;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+}
+
+#cart-sidebar.open {
+    right: 0;
+}
+
+#cart-sidebar h2 {
+    color: #4a6eab;
+    margin-bottom: 1rem;
+}
+
+#cart-list {
+    list-style: none;
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-right: 10px;
+    margin-bottom: 1rem;
+}
+
+/* Updated to fix long coffee names and button alignment */
+#cart-list li {
+    margin-bottom: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    flex-wrap: nowrap;  /* Prevent wrapping */
+    min-width: 0;       /* Allow flex shrinking */
+}
+
+.cart-item-name {
+    flex: 1 1 auto;
+    color: #222;
+    font-weight: 600;
+
+    white-space: nowrap;          /* Prevent line break */
+    overflow: hidden;             /* Hide overflow */
+    text-overflow: ellipsis;      /* Show ... when too long */
+    min-width: 0;                 /* Needed for truncation in flexbox */
+}
+
+.cart-item-controls {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;  /* Don't shrink controls */
+}
+
+/* Make quantity buttons bigger */
+.cart-item-controls button {
+    background-color: #124363;
+    color: white;
+    border: none;
+    padding: 0.4rem 0.9rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    line-height: 1;
+    user-select: none;
+    transition: background-color 0.3s;
+}
+
+.cart-item-controls button:hover {
+    background-color: #22415d;
+}
+
+/* Remove single button style */
+.cart-item-controls .remove-btn {
+    background-color: #8b1e1e;
+    padding: 0.3rem 0.7rem;
+    font-size: 1rem;
+    border-radius: 50%;
+    line-height: 1;
+    font-weight: bold;
+}
+
+.cart-item-controls .remove-btn:hover {
+    background-color: #a32e2e;
+}
+
+/* Add "Remove All" button style */
+#remove-all-btn {
+    background-color: #a32e2e;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    transition: background-color 0.3s;
+    align-self: flex-start;
+}
+
+#remove-all-btn:hover {
+    background-color: #7f231f;
+}
+
+#cart-total {
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #0e0a0a;
+}
+
+#checkout-btn {
+    background-color: #28386a;
+    color: white;
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#checkout-btn:disabled {
+    background-color: #999;
+    cursor: not-allowed;
+}
+
+#checkout-btn:hover:not(:disabled) {
+    background-color: #583c2d;
+}
+
+#close-cart {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: #2f5e8e;
+}
+
+/* Checkout Overlay */
+#checkout-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.6);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+}
+
+#checkout-overlay.active {
+    display: flex;
+}
+
+.checkout-form {
+    background: white;
+    padding: 2rem 3rem;
+    border-radius: 15px;
+    max-width: 400px;
+    width: 90%;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+.checkout-form h2 {
+    margin-bottom: 1rem;
+    color: #26355b;
+}
+
+.checkout-form label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+.checkout-form input {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.checkout-form button[type="submit"] {
+    margin-top: 1.5rem;
+    background-color: #234082;
+    color: white;
+    border: none;
+    padding: 0.8rem;
+    border-radius: 30px;
+    font-weight: bold;
+    width: 100%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.checkout-form button[type="submit"]:hover {
+    background-color: #314a79;
+}
+
+.checkout-form button#cancel-checkout {
+    margin-top: 0.8rem;
+    background-color: #5c3926;
+    width: 100%;
+}
+
+.checkout-form button#cancel-checkout:hover {
+    background-color: #5c3926;
+}
+
+#order-summary {
+    margin-bottom: 1rem;
+    max-height: 150px;
+    overflow-y: auto;
+    border: 1px solid #ffffff;
+    padding: 0.8rem;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    background: #0a344e;
+}
+
+#thank-you {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+#thank-you h3 {
+    color: #56392f;
+    margin-bottom: 0.5rem;
+}
+
+#thank-you button {
+    margin-top: 1rem;
+    background-color: #24496e;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+}

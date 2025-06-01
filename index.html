@@ -1,0 +1,161 @@
+<link rel="stylesheet" href="styles.css" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About Us - Coffee'ss</title>
+    <link rel="stylesheet" href="styles.css" /> <!-- Your main CSS -->
+    <link rel="stylesheet" href="about.css" />  <!-- About section CSS -->
+    <link rel="stylesheet" href="rewards.css" />  <!-- rewards section CSS -->
+    <link rel="stylesheet" href="contact.css" />  <!-- contact section CSS -->
+
+</head>
+<body>
+
+<!-- Navbar -->
+<header class="navbar">
+    <div class="logo">Coffee'ss</div>
+    
+    <nav>
+      <ul>
+        <li><a href="index.html">MENU</a></li>
+        <li><a href="rewards.html">REWARDS</a></li>
+        <li><a href="about.html">ABOUT US</a></li>
+        <li><a href="contact.html" class="active">CONTACT US</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+       <div class="offer-badge">LIMITED TIME OFFER</div>
+      <h1>The Shaken <br /> Espresso Series</h1>
+                     
+      <p>Bold espresso made smoother and creamier, with a frothy finish.</p>
+      <a href="#" class="order-button">ORDER NOW</a>
+    </div>
+    <div class="hero-image"> 
+        
+      <img src="images/espressoads.jpg" alt="Espresso Drink" />
+    </div>
+  </section>
+
+   <!-- Menu Section -->
+   <section class="menu-section">
+    <h2>Our Coffee Favorites</h2>
+
+  
+    <!-- Menu Grid -->
+    <div class="menu-grid">
+
+
+    <div class="menu-item hot">
+        <img src="images/cappuccino.jpg" alt="Cappuccino" />
+        <h3>Cappuccino</h3>
+        <p>Rich espresso with steamed milk and a thick layer of foam.</p>
+        <span class="price">$3.75</span>
+        <button onclick="addToCart('Cappuccino')">Order</button>
+      </div>
+    
+      <div class="menu-item hot">
+        <img src="images/espresso.jpg" alt="Espresso" />
+        <h3>Espresso</h3>
+        <p>Strong and bold, served in a small concentrated shot.</p>
+        <span class="price">$2.50</span>
+        <button onclick="addToCart('Espresso')">Order</button>
+      </div>
+    
+      <div class="menu-item cold">
+        <img src="images/iced-americano.jpg" alt="Iced Americano" />
+        <h3>Iced Americano</h3>
+        <p>Espresso poured over cold water and ice — crisp and energizing.</p>
+        <span class="price">$3.25</span>
+        <button onclick="addToCart('Iced Americano')">Order</button>
+      </div>
+    
+      <div class="menu-item hot">
+        <img src="images/latte.jpg" alt="Latte" />
+        <h3>Latte</h3>
+        <p>Smooth espresso mixed with steamed milk and light foam.</p>
+        <span class="price">$4.00</span>
+        <button onclick="addToCart('Latte')">Order</button>
+      </div>
+    
+      <div class="menu-item cold">
+        <img src="images/iced-matcha.jpg" alt="Iced Matcha" />
+        <h3>Iced Matcha</h3>
+        <p>Fresh green tea blended with milk and ice — sweet and refreshing.</p>
+        <span class="price">$4.25</span>
+        <button onclick="addToCart('Iced Matcha')">Order</button>
+      </div>
+    
+      <div class="menu-item hot">
+        <img src="images/caramel-macchiato.jpg" alt="Caramel Macchiato" />
+        <h3>Caramel Macchiato</h3>
+        <p>Espresso with steamed milk and rich caramel drizzle.</p>
+        <span class="price">$4.50</span>
+        <button onclick="addToCart('Caramel Macchiato')">Order</button>
+      </div>
+    
+      <div class="menu-item hot seasonal">
+        <img src="images/white-chocolate-mocha.jpg" alt="White Chocolate Mocha" />
+        <h3>White Chocolate Mocha</h3>
+        <p>Espresso and steamed milk with creamy white chocolate flavor.</p>
+        <span class="price">$4.75</span>
+        <button onclick="addToCart('White Chocolate Mocha')">Order</button>
+      </div>
+    
+      <div class="menu-item hot">
+        <img src="images/flat-white.jpg" alt="Flat White" />
+        <h3>Flat White</h3>
+        <p>Velvety microfoam milk poured over a rich espresso shot.</p>
+        <span class="price">$4.25</span>
+        <button onclick="addToCart('Flat White')">Order</button>
+      </div>
+    
+    </div>
+  </section>
+
+  <!-- Floating Cart Icon -->
+  <button id="cart-toggle" aria-label="Open Cart">
+    🛒 <span id="cart-count">0</span>
+  </button>
+
+  <!-- Cart Sidebar -->
+  <aside id="cart-sidebar" aria-hidden="true">
+    <h2>Your Basket</h2>
+    <ul id="cart-list"></ul>
+    <p id="cart-total">Total: $0.00</p>
+    <button id="checkout-btn" disabled>Checkout</button>
+    <button id="close-cart" aria-label="Close Cart">✕</button>
+  </aside>
+
+  <!-- Checkout Overlay -->
+  <div id="checkout-overlay" aria-hidden="true">
+    <div class="checkout-form">
+      <h2>Checkout</h2>
+      <div id="order-summary"></div>
+
+      <form id="checkout-form">
+        <label for="name">Name:</label>
+        <input id="name" name="name" type="text" required />
+
+        <label for="email">Email:</label>
+        <input id="email" name="email" type="email" required />
+
+        <button type="submit">Place Order</button>
+        <button type="button" id="cancel-checkout">Cancel</button>
+      </form>
+      <div id="thank-you" hidden>
+        <h3>Thank you for your order!</h3>
+        <p>We will contact you shortly.</p>
+        <button id="close-thank-you">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
